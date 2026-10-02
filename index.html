@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agamakizh IAS Academy Examination – TNPSC · SSC · Railway · TRT · TET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;family=Noto+Sans+Tamil:wght@400;500;700&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2f4f8;
+      --card: #ffffff;
+      --ink: #10223d;
+      --muted: #5b6b82;
+      --line: #d8deea;
+      --blue: #2d5bd0;
+      --blue-soft: #e6ecfb;
+      --green: #1e7d4f;
+      --green-soft: #e1f3ea;
+      --red: #b3261e;
+      --red-soft: #fbe7e5;
+      --amber: #8a5a00;
+      --amber-soft: #fdf0d2;
+      --violet: #6a45b0;
+      --radius: 10px;
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --bg: #0e1626;
+        --card: #162238;
+        --ink: #e8edf7;
+        --muted: #9fb0c9;
+        --line: #2a3a57;
+        --blue: #7fa2ff;
+        --blue-soft: #1d2c4d;
+        --green: #59cf93;
+        --green-soft: #163a2b;
+        --red: #ff8f87;
+        --red-soft: #432022;
+        --amber: #f2c261;
+        --amber-soft: #3f3216;
+        --violet: #b79cf2
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.55 "Noto Sans", "Noto Sans Tamil", system-ui, sans-serif
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+      color: inherit
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px
+    }
+
+    header.top {
+      background: var(--ink);
+      color: #fff;
+      padding: 14px 16px
+    }
+
+    header.top .in {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    header.top h1 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .2px
+    }
+
+    header.top a {
+      color: #cfdcff;
+      font-size: .9rem;
+      text-decoration: none;
+      cursor: pointer
+    }
+
+    header.top a:hover {
+      text-decoration: underline
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1rem
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .row>* {
+      flex: 1 1 200px
+    }
+
+    label {
+      display: block;
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 4px
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card)
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 1px
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 9px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500
+    }
+
+    .btn:hover {
+      background: var(--blue-soft)
+    }
+
+    .btn.primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff
+    }
+
+    .btn.primary:hover {
+      filter: brightness(1.08)
+    }
+
+    [data-theme=x] .btn.primary {
+      color: #fff
+    }
+
+    @media (prefers-color-scheme:dark) {
+      .btn.primary {
+        color: #0e1626
+      }
+    }
+
+    .btn.danger {
+      color: var(--red);
+      border-color: var(--red)
+    }
+
+    .btn.small {
+      padding: 5px 10px;
+      font-size: .85rem
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: not-allowed
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 8px 0 14px
+    }
+
+    .chip {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor: pointer;
+      font-size: .9rem
+    }
+
+    .chip.on {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px
+    }
+
+    .exam h3 {
+      font-size: 1.02rem
+    }
+
+    .facts {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 8px 0 12px;
+      font-size: .88rem;
+      color: var(--muted)
+    }
+
+    .facts b {
+      color: var(--ink)
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: .78rem;
+      padding: 2px 9px;
+      border-radius: 6px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 700
+    }
+
+    .hide {
+      display: none !important
+    }
+
+    .msg {
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-size: .92rem
+    }
+
+    .msg.err {
+      background: var(--red-soft);
+      color: var(--red)
+    }
+
+    .msg.ok {
+      background: var(--green-soft);
+      color: var(--green)
+    }
+
+    /* exam screen */
+    .bar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--card);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 16px
+    }
+
+    .bar .in {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .timer {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      font-size: 1.4rem;
+      padding: 6px 16px;
+      border-radius: 12px;
+      background: #111;
+      color: #fff;
+    }
+
+    .timer.low {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 20px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    @media(max-width:800px) {
+      .layout {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .q {
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin: 10px 0 20px;
+      white-space: pre-wrap
+    }
+
+    .opt {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      width: 100%;
+      text-align: left;
+      padding: 14px 18px;
+      margin: 12px 0;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background: #f8f9fa;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.05rem;
+    }
+
+    .opt:hover {
+      background: #e9ecef;
+      transform: translateY(-1px);
+    }
+
+    .bub {
+      flex: 0 0 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #dde1e6;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--muted);
+      transition: all 0.2s ease;
+    }
+
+    .opt.sel {
+      border-color: #3742fa;
+      background: #f0f1ff
+    }
+
+    .opt.sel .bub {
+      background: #3742fa;
+      border-color: #3742fa;
+      color: #fff
+    }
+
+    .opt.right {
+      border-color: var(--green);
+      background: var(--green-soft)
+    }
+
+    .opt.right .bub {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff
+    }
+
+    .opt.bad {
+      border-color: var(--red);
+      background: var(--red-soft)
+    }
+
+    .opt.bad .bub {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .pal {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px
+    }
+
+    .pal button {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .9rem;
+      transition: all 0.15s ease;
+    }
+
+    .pal button:hover {
+      transform: scale(1.05);
+    }
+
+    .pal button.ans {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff
+    }
+
+    .pal button.rev {
+      background: var(--violet);
+      border-color: var(--violet);
+      color: #fff
+    }
+
+    .pal button.seen {
+      background: var(--amber-soft);
+      border-color: var(--amber);
+      color: var(--amber)
+    }
+
+    .pal button.cur {
+      outline: 3px solid #3742fa;
+      outline-offset: 1px
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* result */
+    .score {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      margin: 14px 0
+    }
+
+    .stat {
+      border-radius: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line)
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.4rem
+    }
+
+    .stat.g {
+      background: var(--green-soft);
+      color: var(--green)
+    }
+
+    .stat.r {
+      background: var(--red-soft);
+      color: var(--red)
+    }
+
+    .stat.a {
+      background: var(--amber-soft);
+      color: var(--amber)
+    }
+
+    .expl {
+      margin-top: 8px;
+      padding: 9px 12px;
+      background: var(--blue-soft);
+      border-radius: 8px;
+      font-size: .92rem;
+      white-space: pre-wrap
+    }
+
+
+    .spin {
+      padding: 30px;
+      text-align: center;
+      color: var(--muted)
+    }
+
+    /* Auth Layout */
+    .auth-layout {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+      background: #fff;
+    }
+
+    .auth-sidebar {
+      flex: 1.1;
+      background: linear-gradient(135deg, #3742fa, #1e272e);
+      color: white;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .auth-sidebar h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .auth-sidebar p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      max-width: 450px;
+    }
+
+    .auth-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: #fff;
+      color: #111;
+    }
+
+    .auth-form-container {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .auth-form-container h2 {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+    }
+
+    .auth-form-container input {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      padding: 12px 0;
+      margin-bottom: 24px;
+      background: transparent;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .auth-form-container input:focus {
+      outline: none;
+      border-bottom: 2px solid #111;
+    }
+
+    .auth-form-container .btn.primary {
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      background: #1a1a1a;
+      border-color: #1a1a1a;
+      font-size: 1rem;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .auth-form-container .btn.primary:hover {
+      background: #333;
+    }
+
+    @media (max-width: 768px) {
+      .auth-layout {
+        flex-direction: column;
+      }
+
+      .auth-sidebar {
+        padding: 40px 20px;
+        flex: none;
+      }
+
+      .auth-content {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top">
+    <div class="in">
+      <h1 style="display: flex; align-items: center; gap: 10px;">
+        <img src="logo.jpg" alt="Logo" style="height: 32px; width: auto; border-radius: 50%;">
+        Agamakizh IAS Academy Examination <span style="font-weight:400;opacity:.8">· TNPSC · SSC · Railway · TRT ·
+          TET</span>
+      </h1>
+      <span><a id="lnkLogin" href="#" onclick="stopTimer(); location.hash=''; home(); return false;">Login</a>
+        &nbsp;</span>
+    </div>
+  </header>
+
+  <main id="app" class="wrap"></main>
+
+  <script>
+    /* ===================== CONFIG ===================== */
+    // Paste your Apps Script Web app URL here (ends with /exec)
+    const API_URL = "https://script.google.com/macros/s/AKfycby-olADCQt5_GPfXFK0_KCl0YH7jPamcTHyow2c0ZUZKBGmzusRxwuradxo1EGU5ync/exec";
+    const CATEGORIES = ["TNPSC", "SSC", "Railway", "TRT", "TET", "Other"];
+    /* ================================================== */
+
+    const $app = document.getElementById('app');
+    const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+    async function api(action, data = {}) {
+      if (API_URL.startsWith("PASTE")) throw new Error("Set API_URL in index.html first.");
+      const r = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },   // avoids CORS preflight with Apps Script
+        body: JSON.stringify(Object.assign({ action }, data))
+      });
+      const text = await r.text();
+      let j;
+      try {
+        j = JSON.parse(text);
+      } catch (e) {
+        if (text.trim().startsWith('<')) {
+          throw new Error("Backend Error: The Google Apps Script URL returned an HTML page instead of data. Please re-deploy your Web App and make sure 'Who has access' is set to 'Anyone'.");
+        }
+        throw new Error("Invalid JSON response from server.");
+      }
+      if (!j.ok) throw new Error(j.error || 'Request failed');
+      return j;
+    }
+    const loading = t => { $app.innerHTML = `<div class="spin">${esc(t || 'Loading…')}</div>`; };
+    const showErr = (el, e) => { el.innerHTML = `<div class="msg err">${esc(e.message || e)}</div>`; };
+
+    // document.getElementById('lnkHome').onclick = () => { stopTimer(); location.hash = ''; home(); };
+
+    /* ===================== STUDENT ===================== */
+    let S = {};          // current exam state
+    let timerId = null;
+    function stopTimer() { if (timerId) clearInterval(timerId); timerId = null; }
+
+    function updateHeader() {
+      const saved = JSON.parse(sessionStorage.getItem('cand') || '{}');
+      const lnk = document.getElementById('lnkLogin');
+      const header = document.querySelector('header.top');
+      if (saved.username) {
+        if (header) header.style.display = '';
+        $app.className = 'wrap';
+        if (lnk) {
+          lnk.innerText = 'Log out';
+          lnk.onclick = () => { sessionStorage.removeItem('cand'); stopTimer(); location.hash = ''; home(); return false; };
+        }
+      } else {
+        if (header) header.style.display = 'none';
+        $app.className = '';
+        if (lnk) {
+          lnk.innerText = 'Login';
+          lnk.onclick = () => { stopTimer(); location.hash = ''; home(); return false; };
+        }
+      }
+    }
+
+    function userAuth(isRegister = false) {
+      updateHeader();
+      $app.innerHTML = `
+      <div class="auth-layout">
+        <div class="auth-sidebar">
+          <div style="font-size:4rem; margin-bottom: 20px;">✴</div>
+          <h1>Hello<br>Candidate! 👋</h1>
+          <p>Welcome to the Agamakizh IAS Academy Examination portal. Access your mock tests, track your progress, and excel in your preparation.</p>
+          <div style="margin-top:auto; font-size:0.9rem; opacity:0.6;">© 2026 Agamakizh IAS Academy. All rights reserved.</div>
+        </div>
+        <div class="auth-content">
+          <div class="auth-form-container">
+            <div style="text-align: center; margin-bottom: 20px;">
+              <img src="logo.jpg" alt="Logo" style="max-width: 120px; height: auto; border-radius: 50%;">
+            </div>
+            <h2>${isRegister ? 'Create Account' : 'Welcome Back!'}</h2>
+            <div style="color:var(--muted); margin-bottom: 30px; font-size: 0.95rem;">
+              ${isRegister ? `Already have an account? <a href="#" id="sw" style="color: #111; font-weight:bold;">Login here</a>.` : `Don't have an account? <a href="#" id="sw" style="color: #111; font-weight:bold;">Create a new account now</a>, it's FREE!`}
+            </div>
+            
+            <input id="un" type="text" placeholder="Username (e.g. user@gmail.com)">
+            <input id="pw" type="password" placeholder="Password">
+            ${isRegister ? `
+              <input id="nm" type="text" placeholder="Full Name">
+              <input id="mb" type="text" inputmode="numeric" maxlength="10" placeholder="Mobile Number">
+            ` : ''}
+            
+            <div id="uerr"></div>
+            <button class="btn primary" id="btnAuth">${isRegister ? 'Create Account' : 'Login Now'}</button>
+          </div>
+        </div>
+      </div>`;
+
+      document.getElementById('sw').onclick = (e) => { e.preventDefault(); userAuth(!isRegister); };
+      document.getElementById('btnAuth').onclick = () => {
+        const un = document.getElementById('un').value.trim();
+        const pw = document.getElementById('pw').value.trim();
+        const err = document.getElementById('uerr');
+
+        let users = JSON.parse(localStorage.getItem('mockUsers') || '{}');
+
+        if (isRegister) {
+          const nm = document.getElementById('nm') ? document.getElementById('nm').value.trim() : '';
+          const mb = document.getElementById('mb') ? document.getElementById('mb').value.trim() : '';
+          if (!un || !pw || !nm || !mb) return showErr(err, 'All fields are required.');
+          if (users[un]) return showErr(err, 'Username already exists.');
+
+          users[un] = { password: pw, name: nm, mobile: mb };
+          localStorage.setItem('mockUsers', JSON.stringify(users));
+
+          sessionStorage.setItem('cand', JSON.stringify({ name: nm, mobile: mb, username: un }));
+          home();
+        } else {
+          if (!un || !pw) return showErr(err, 'Username and password required.');
+          const user = users[un];
+          if (!user || user.password !== pw) return showErr(err, 'Invalid username or password.');
+
+          sessionStorage.setItem('cand', JSON.stringify({ name: user.name, mobile: user.mobile, username: un }));
+          home();
+        }
+      };
+    }
+
+    async function home() {
+      updateHeader();
+      const saved = JSON.parse(sessionStorage.getItem('cand') || '{}');
+      if (!saved.username) return userAuth();
+      loading('Loading tests…');
+      let exams = [];
+      try { exams = (await api('listExams')).exams; } catch (e) { $app.innerHTML = ''; const d = document.createElement('div'); showErr(d, e); $app.appendChild(d); return; }
+      let cat = 'All';
+      // Duplicate removed
+      const draw = () => {
+        const cats = ['All', ...CATEGORIES.filter(c => exams.some(e => e.category === c))];
+        const list = exams.filter(e => cat === 'All' || e.category === cat);
+        $app.innerHTML = `
+      <div class="card" style="margin-bottom:14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <h2 style="margin-bottom:4px">Welcome, ${esc(saved.name)}!</h2>
+          <div class="muted">Mobile: ${esc(saved.mobile)}</div>
+        </div>
+      </div>
+      <div class="chips">${cats.map(c => `<button class="chip ${c === cat ? 'on' : ''}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+      <div class="grid">${list.length ? list.map(e => `
+        <div class="card exam">
+          <span class="tag">${esc(e.category)}</span>
+          <h3 style="margin-top:8px">${esc(e.title)}</h3>
+          <div class="facts">
+            <span><b>${e.questionCount}</b> questions</span>
+            <span><b>${e.durationMin}</b> min</span>
+            <span><b>${e.marksPerQ}</b> mark each</span>
+            <span>Negative: <b>${e.negMark ? '−' + e.negMark : 'none'}</b></span>
+          </div>
+          <button class="btn primary" data-start="${esc(e.examId)}">Start test</button>
+        </div>`).join('') : '<div class="card muted">No tests available yet. Please check back soon.</div>'}
+      </div><div id="homeErr"></div>`;
+        $app.querySelectorAll('.chip').forEach(b => b.onclick = () => { keep(); cat = b.dataset.c; draw(); });
+        $app.querySelectorAll('[data-start]').forEach(b => b.onclick = () => begin(b.dataset.start));
+      };
+      const keep = () => {
+        const n = document.getElementById('nm'), m = document.getElementById('mb');
+        if (n && m) { saved.name = n.value; saved.mobile = m.value; sessionStorage.setItem('cand', JSON.stringify(saved)); }
+      };
+      async function begin(id) {
+        keep();
+        const err = document.getElementById('homeErr');
+        if (!saved.name || !/^\d{10}$/.test(saved.mobile)) {
+          err.innerHTML = '<div class="msg err">Invalid name or mobile number in your account.</div>'; return;
+        }
+        loading('Preparing your test…');
+        try {
+          const j = await api('getExam', { examId: id });
+          startExam(j.exam, j.questions, saved);
+        } catch (e) { home(); }
+      }
+      draw();
+    }
+
+    function startExam(exam, questions, cand) {
+      S = { exam, questions, cand, i: 0, ans: {}, mark: {}, seen: { 0: true }, endAt: Date.now() + exam.durationMin * 60000, t0: Date.now(), done: false };
+      renderExam();
+      stopTimer();
+      timerId = setInterval(tick, 500);
+      window.onbeforeunload = e => { if (!S.done) { e.preventDefault(); e.returnValue = ''; } };
+    }
+
+    function tick() {
+      const left = Math.max(0, S.endAt - Date.now());
+      const el = document.getElementById('tm');
+      if (el) {
+        const m = Math.floor(left / 60000), s = Math.floor(left / 1000) % 60;
+        el.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        el.classList.toggle('low', left < 5 * 60000);
+      }
+      if (left <= 0) { stopTimer(); submitExam(true); }
+    }
+
+    function renderExam() {
+      const { exam, questions: Q, i } = S;
+      const q = Q[i];
+      const cnt = Object.keys(S.ans).length;
+      $app.style.maxWidth = '100%'; $app.style.padding = '0';
+      $app.innerHTML = `
+    <div class="bar"><div class="in">
+      <div><b>${esc(exam.title)}</b><div class="muted">${esc(S.cand.name)} · ${cnt}/${Q.length} answered</div></div>
+    </div></div>
+    <div class="wrap"><div class="layout">
+      <div class="card">
+        <div class="muted">Question ${i + 1} of ${Q.length}</div>
+        <div class="q">${esc(q.question)}</div>
+        ${['A', 'B', 'C', 'D'].filter(k => q.options[k]).map(k => `
+          <button class="opt ${S.ans[q.qId] === k ? 'sel' : ''}" data-k="${k}">
+            <span class="bub">${k}</span><span style="white-space:pre-wrap">${esc(q.options[k])}</span>
+          </button>`).join('')}
+        <div class="nav">
+          <button class="btn" id="bPrev" ${i === 0 ? 'disabled' : ''}>Previous</button>
+          <button class="btn primary" id="bNext" ${i === Q.length - 1 ? 'disabled' : ''}>Save &amp; next</button>
+          <button class="btn" id="bMark">${S.mark[q.qId] ? 'Unmark review' : 'Mark for review'}</button>
+          <button class="btn" id="bClear" ${S.ans[q.qId] ? '' : 'disabled'}>Clear answer</button>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom: 14px; text-align: center; padding: 20px;">
+          <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">Time Left</h3>
+          <div class="timer" id="tm" style="display: inline-block; font-size: 2rem; padding: 10px 20px;">--:--</div>
+        </div>
+        <div class="card">
+          <h3>Question palette</h3>
+          <div class="pal">${Q.map((x, n) => {
+        let c = S.mark[x.qId] ? 'rev' : S.ans[x.qId] ? 'ans' : S.seen[n] ? 'seen' : '';
+        return `<button class="${c} ${n === i ? 'cur' : ''}" data-n="${n}">${n + 1}</button>`;
+      }).join('')}</div>
+          <div class="legend">
+            <span><i style="background:var(--green)"></i>Answered</span>
+            <span><i style="background:var(--violet)"></i>Review</span>
+            <span><i style="background:var(--amber-soft);border:1px solid var(--amber)"></i>Not answered</span>
+            <span><i style="border:1px solid var(--line)"></i>Not visited</span>
+          </div>
+          <button class="btn primary" id="bSubmit" style="width:100%;margin-top:14px">Submit test</button>
+        </div>
+      </div>
+    </div></div>`;
+      const go = n => { S.i = n; S.seen[n] = true; renderExam(); window.scrollTo(0, 0); };
+      $app.querySelectorAll('.opt').forEach(b => b.onclick = () => { S.ans[q.qId] = b.dataset.k; renderExam(); });
+      $app.querySelectorAll('.pal button').forEach(b => b.onclick = () => go(+b.dataset.n));
+      document.getElementById('bPrev').onclick = () => go(i - 1);
+      document.getElementById('bNext').onclick = () => go(i + 1);
+      document.getElementById('bMark').onclick = () => { S.mark[q.qId] = !S.mark[q.qId]; renderExam(); };
+      document.getElementById('bClear').onclick = () => { delete S.ans[q.qId]; renderExam(); };
+      document.getElementById('bSubmit').onclick = () => {
+        const un = S.questions.length - Object.keys(S.ans).length;
+        if (confirm(un ? `${un} question(s) are unanswered. Submit the test now?` : 'Submit the test now?')) submitExam(false);
+      };
+      tick();
+    }
+
+    async function submitExam(auto) {
+      if (S.done) return;
+      S.done = true; stopTimer(); window.onbeforeunload = null;
+      $app.style.maxWidth = ''; $app.style.padding = '';
+      loading(auto ? 'Time is up. Submitting…' : 'Submitting…');
+      try {
+        const j = await api('submit', {
+          examId: S.exam.examId, name: S.cand.name, mobile: S.cand.mobile, answers: S.ans,
+          timeTakenSec: Math.round((Date.now() - S.t0) / 1000)
+        });
+        showResult(j, auto);
+      } catch (e) {
+        S.done = false;
+        $app.innerHTML = `<div class="card"><div class="msg err">${esc(e.message)}</div>
+      <p class="muted">Your answers are still saved on this screen. Check your internet and try again.</p>
+      <button class="btn primary" id="retry">Retry submit</button></div>`;
+        document.getElementById('retry').onclick = () => submitExam(auto);
+      }
+    }
+
+    function showResult(r, auto) {
+      const e = S.exam, acc = r.correct + r.wrong ? Math.round(r.correct / (r.correct + r.wrong) * 100) : 0;
+      $app.innerHTML = `
+    <div class="card">
+      ${auto ? '<div class="msg err">Time ran out, so the test was submitted automatically.</div>' : ''}
+      <div class="muted">${esc(e.title)} · ${esc(S.cand.name)}</div>
+      <div class="score">${r.score} <span class="muted" style="font-size:1.1rem">/ ${r.total}</span></div>
+      <div class="stats">
+        <div class="stat g"><b>${r.correct}</b>Correct (+${r.correct * e.marksPerQ})</div>
+        <div class="stat r"><b>${r.wrong}</b>Wrong (−${Math.round(r.wrong * e.negMark * 100) / 100})</div>
+        <div class="stat a"><b>${r.skipped}</b>Skipped</div>
+        <div class="stat"><b>${acc}%</b>Accuracy</div>
+      </div>
+      <button class="btn primary" id="again">Back to tests</button>
+    </div>
+    <h2 style="margin:20px 0 10px">Answer review</h2>
+    ${r.review.map((q, n) => `
+      <div class="card" style="margin-bottom:10px">
+        <div class="muted">Question ${n + 1} · ${!q.given ? 'Skipped' : q.given === q.correct ? 'Correct' : 'Wrong'}</div>
+        <div class="q">${esc(q.question)}</div>
+        ${['A', 'B', 'C', 'D'].filter(k => q.options[k]).map(k => `
+          <div class="opt ${k === q.correct ? 'right' : k === q.given ? 'bad' : ''}" style="cursor:default">
+            <span class="bub">${k}</span><span style="white-space:pre-wrap">${esc(q.options[k])}</span>
+          </div>`).join('')}
+        ${q.explanation ? `<div class="expl">${esc(q.explanation)}</div>` : ''}
+      </div>`).join('')}`;
+      document.getElementById('again').onclick = home;
+      window.scrollTo(0, 0);
+    }
+
+    /* ===================== START ===================== */
+    home();
+  </script>
+</body>
+
+</html>
